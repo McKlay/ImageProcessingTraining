@@ -1,0 +1,37 @@
+## Ignore Visual Studio temporary files, build results, and user-specific files
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio cache files
+.vs/
+*.user
+*.suo
+*.sdf
+*.VC.db
+*.VC.VC.opendb
+*.dbmdl
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.userosscache
+*.sln.docstates
+
+# Microsoft Office temp files
+~$*
+
+# Logs
+*.log
+
+# Others
+*.tmp
+*.bak
+
+# Rider
+.idea/
+
+# Windows thumbnail cache
+Thumbs.db
