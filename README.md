@@ -26,5 +26,4 @@ This project was created for academic training and hands-on practice in image pr
 
 ---
 
-✅ **Built by Clay Mark Sarte**  
-🎓 MSCS Student | Mechanical Engineer turned Software Developer  
+✅ **Built by Clay Mark Sarte** 
