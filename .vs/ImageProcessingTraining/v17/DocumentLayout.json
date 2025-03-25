@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|c:\\users\\clay\\source\\repos\\imageprocessingtraining\\imageprocessingtraining\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\imageprocessingtraining\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\imageprocessingtraining\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|c:\\users\\clay\\source\\repos\\imageprocessingtraining\\imageprocessingtraining\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|c:\\users\\clay\\source\\repos\\imageprocessingtraining\\imageprocessingtraining\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|c:\\users\\clay\\source\\repos\\imageprocessingtraining\\imageprocessingtraining\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|c:\\users\\clay\\source\\repos\\imageprocessingtraining\\imageprocessingtraining\\basicdip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D6A2FD22-8B23-4ADB-9002-2C6C3A7E2A3A}|ImageProcessingTraining\\ImageProcessingTraining.csproj|solutionrelative:imageprocessingtraining\\basicdip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BasicDIP.cs",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\BasicDIP.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\BasicDIP.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\BasicDIP.cs",
+              "RelativeToolTip": "ImageProcessingTraining\\BasicDIP.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAgwEoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-06T21:52:33.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form3.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form3.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form3.cs [Design]",
+              "RelativeToolTip": "ImageProcessingTraining\\Form3.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T14:56:58.864Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form3.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form3.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form3.cs",
+              "RelativeToolTip": "ImageProcessingTraining\\Form3.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAFwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T15:10:56.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form2.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form2.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form2.cs [Design]",
+              "RelativeToolTip": "ImageProcessingTraining\\Form2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T22:52:24.213Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form2.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form2.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form2.cs",
+              "RelativeToolTip": "ImageProcessingTraining\\Form2.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAmwKAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T23:11:05.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form1.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form1.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form1.cs [Design]",
+              "RelativeToolTip": "ImageProcessingTraining\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T13:14:53.614Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form1.cs",
+              "RelativeDocumentMoniker": "ImageProcessingTraining\\Form1.cs",
+              "ToolTip": "C:\\Users\\Clay\\source\\repos\\ImageProcessingTraining\\ImageProcessingTraining\\Form1.cs",
+              "RelativeToolTip": "ImageProcessingTraining\\Form1.cs",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAmwKoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T13:29:20.216Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
