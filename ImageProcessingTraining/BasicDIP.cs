@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,65 +11,53 @@ namespace ImageProcessingTraining
     {
         public static void Equalisation(ref Bitmap a, ref Bitmap b, int degree)
         {
-            int height = a.Height;
             int width = a.Width;
-            int numSamples, histSum;
-            int[] Ymap = new int[256];
+            int height = a.Height;
             int[] hist = new int[256];
+            int[] Ymap = new int[256];
             int percent = degree;
 
-            // Compute the histogram for the sub-image
-            Color nakuha;
-            Color gray;
-            Byte graydata;
-            //Compute greyscale
-            for(int x = 0; x < a.Width; x++)
+            // Convert to grayscale and build histogram
+            Bitmap grayBitmap = new Bitmap(width, height);
+            for (int x = 0; x < width; x++)
             {
-                for(int y = 0; y < a.Height; y++)
+                for (int y = 0; y < height; y++)
                 {
-                    nakuha = a.GetPixel(x, y);
-                    graydata = (Byte)((nakuha.R + nakuha.G + nakuha.B)/3);
-                    gray = Color.FromArgb(graydata, graydata, graydata);
-                    a.SetPixel(x, y, gray);
+                    Color original = a.GetPixel(x, y);
+                    byte gray = (byte)((original.R + original.G + original.B) / 3);
+                    hist[gray]++;
+                    grayBitmap.SetPixel(x, y, Color.FromArgb(gray, gray, gray));
                 }
-                // Histogram 1D data
-                for(int k = 0; k < a.Width; k++)
-                {
-                    for(int y = 0; y < a.Height; y++)
-                    {
-                        nakuha = a.GetPixel(k, y);
-                        hist[nakuha.B]++;
-                    }
-                }
-                // remap the Ys, use maximum contrast (degree == 100)
-                // based on the histogram equalization
-                numSamples = (a.Width * a.Height); // number of samples that contributed to the histogram
-                histSum = 0;
-                for(int h = 0; h < 256; h++)
-                {
-                    histSum += hist[h];
-                    Ymap[h] = histSum * 255 / numSamples;
-                }
+            }
 
-                // If desired contrast is not maximum (percent < 100), then adjust the mapping
-                if(percent < 100)
-                {
-                    for(int h = 0; h < 256; h++)
-                    {
-                        Ymap[h] = h + ((int)Ymap[h] - h) * percent / 100;
-                    }
-                }
+            // Compute cumulative histogram (mapping)
+            int histSum = 0;
+            int numSamples = width * height;
+            for (int i = 0; i < 256; i++)
+            {
+                histSum += hist[i];
+                Ymap[i] = histSum * 255 / numSamples;
+            }
 
-                b = new Bitmap(a.Width, a.Height);
-                // enhance the region by remapping the intensities
-                for(int y = 0; y < a.Height; y++)
+            // Apply percentage (optional)
+            if (percent < 100)
+            {
+                for (int i = 0; i < 256; i++)
                 {
-                    for(int k = 0; k < a.Width; k++)
-                    {
-                        // set the new value of the gray value
-                        Color temp = Color.FromArgb(Ymap[a.GetPixel(k, y).R], Ymap[a.GetPixel(k, y).G], Ymap[a.GetPixel(k, y).B]);
-                        b.SetPixel(k, y, temp);
-                    }
+                    Ymap[i] = i + (Ymap[i] - i) * percent / 100;
+                }
+            }
+
+            // Create the equalized image
+            b = new Bitmap(width, height);
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    Color g = grayBitmap.GetPixel(x, y);
+                    int eq = Ymap[g.R];
+                    eq = Math.Clamp(eq, 0, 255); // Ensure it's within bounds
+                    b.SetPixel(x, y, Color.FromArgb(eq, eq, eq));
                 }
             }
         }
@@ -136,5 +125,79 @@ namespace ImageProcessingTraining
                 }
             }
         }
+        public static bool Conv3x3(ref Bitmap b, ConvMatrix m)
+        {
+            if (m.Factor == 0) return false;
+
+            Bitmap bSrc = (Bitmap)b.Clone();
+            BitmapData bmData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height),
+                ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+            BitmapData bmSrc = bSrc.LockBits(new Rectangle(0, 0, bSrc.Width, bSrc.Height),
+                ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+
+            int stride = bmData.Stride;
+            int stride2 = stride * 2;
+            IntPtr Scan0 = bmData.Scan0;
+            IntPtr SrcScan0 = bmSrc.Scan0;
+
+            unsafe
+            {
+                byte* p = (byte*)(void*)Scan0;
+                byte* pSrc = (byte*)(void*)SrcScan0;
+                int nOffset = stride - b.Width * 3;
+                int nWidth = b.Width - 2;
+                int nHeight = b.Height - 2;
+                int nPixel;
+
+                for (int y = 0; y < nHeight; ++y)
+                {
+                    for (int x = 0; x < nWidth; ++x)
+                    {
+                        // Blue
+                        nPixel = (
+                            (pSrc[0] * m.TopLeft) + (pSrc[3] * m.TopMid) + (pSrc[6] * m.TopRight) +
+                            (pSrc[0 + stride] * m.MidLeft) + (pSrc[3 + stride] * m.Pixel) + (pSrc[6 + stride] * m.MidRight) +
+                            (pSrc[0 + stride2] * m.BottomLeft) + (pSrc[3 + stride2] * m.BottomMid) + (pSrc[6 + stride2] * m.BottomRight)
+                            ) / m.Factor + m.Offset;
+                        p[3 + stride] = Clamp(nPixel);
+
+                        // Green
+                        nPixel = (
+                            (pSrc[1] * m.TopLeft) + (pSrc[4] * m.TopMid) + (pSrc[7] * m.TopRight) +
+                            (pSrc[1 + stride] * m.MidLeft) + (pSrc[4 + stride] * m.Pixel) + (pSrc[7 + stride] * m.MidRight) +
+                            (pSrc[1 + stride2] * m.BottomLeft) + (pSrc[4 + stride2] * m.BottomMid) + (pSrc[7 + stride2] * m.BottomRight)
+                            ) / m.Factor + m.Offset;
+                        p[4 + stride] = Clamp(nPixel);
+
+                        // Red
+                        nPixel = (
+                            (pSrc[2] * m.TopLeft) + (pSrc[5] * m.TopMid) + (pSrc[8] * m.TopRight) +
+                            (pSrc[2 + stride] * m.MidLeft) + (pSrc[5 + stride] * m.Pixel) + (pSrc[8 + stride] * m.MidRight) +
+                            (pSrc[2 + stride2] * m.BottomLeft) + (pSrc[5 + stride2] * m.BottomMid) + (pSrc[8 + stride2] * m.BottomRight)
+                            ) / m.Factor + m.Offset;
+                        p[5 + stride] = Clamp(nPixel);
+
+                        p += 3;
+                        pSrc += 3;
+                    }
+
+                    p += nOffset;
+                    pSrc += nOffset;
+                }
+            }
+
+            b.UnlockBits(bmData);
+            bSrc.UnlockBits(bmSrc);
+            return true;
+        }
+
+        private static byte Clamp(int val)
+        {
+            if (val < 0) return 0;
+            if (val > 255) return 255;
+            return (byte)val;
+        }
+
+
     }
 }

@@ -41,13 +41,23 @@
             histogramToolStripMenuItem = new ToolStripMenuItem();
             sepiaToolStripMenuItem = new ToolStripMenuItem();
             webCamSubtractionToolStripMenuItem = new ToolStripMenuItem();
+            staticImageSubtractionToolStripMenuItem = new ToolStripMenuItem();
+            advancedEnhancementToolStripMenuItem = new ToolStripMenuItem();
+            sharpenToolStripMenuItem2 = new ToolStripMenuItem();
+            edgeDetectionToolStripMenuItem1 = new ToolStripMenuItem();
+            boxBlurToolStripMenuItem1 = new ToolStripMenuItem();
+            gaussianBlurToolStripMenuItem = new ToolStripMenuItem();
+            embossToolStripMenuItem = new ToolStripMenuItem();
+            edgeEnhancementToolStripMenuItem = new ToolStripMenuItem();
+            meanBlurToolStripMenuItem = new ToolStripMenuItem();
+            sobelVerticalToolStripMenuItem = new ToolStripMenuItem();
+            laplacianToolStripMenuItem = new ToolStripMenuItem();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
             trackBar1 = new TrackBar();
             trackBar2 = new TrackBar();
-            staticImageSubtractionToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -58,7 +68,7 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, dIPToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, dIPToolStripMenuItem, advancedEnhancementToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 28);
@@ -149,11 +159,88 @@
             webCamSubtractionToolStripMenuItem.Text = "Web Cam Subtraction";
             webCamSubtractionToolStripMenuItem.Click += webCamSubtractionToolStripMenuItem_Click;
             // 
+            // staticImageSubtractionToolStripMenuItem
+            // 
+            staticImageSubtractionToolStripMenuItem.Name = "staticImageSubtractionToolStripMenuItem";
+            staticImageSubtractionToolStripMenuItem.Size = new Size(255, 26);
+            staticImageSubtractionToolStripMenuItem.Text = "Static Image Subtraction";
+            staticImageSubtractionToolStripMenuItem.Click += staticImageSubtractionToolStripMenuItem_Click;
+            // 
+            // advancedEnhancementToolStripMenuItem
+            // 
+            advancedEnhancementToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sharpenToolStripMenuItem2, edgeDetectionToolStripMenuItem1, boxBlurToolStripMenuItem1, gaussianBlurToolStripMenuItem, embossToolStripMenuItem, edgeEnhancementToolStripMenuItem, meanBlurToolStripMenuItem, sobelVerticalToolStripMenuItem, laplacianToolStripMenuItem });
+            advancedEnhancementToolStripMenuItem.Name = "advancedEnhancementToolStripMenuItem";
+            advancedEnhancementToolStripMenuItem.Size = new Size(182, 24);
+            advancedEnhancementToolStripMenuItem.Text = "Advanced Enhancement";
+            // 
+            // sharpenToolStripMenuItem2
+            // 
+            sharpenToolStripMenuItem2.Name = "sharpenToolStripMenuItem2";
+            sharpenToolStripMenuItem2.Size = new Size(224, 26);
+            sharpenToolStripMenuItem2.Text = "Sharpen";
+            sharpenToolStripMenuItem2.Click += sharpenToolStripMenuItem_Click;
+            // 
+            // edgeDetectionToolStripMenuItem1
+            // 
+            edgeDetectionToolStripMenuItem1.Name = "edgeDetectionToolStripMenuItem1";
+            edgeDetectionToolStripMenuItem1.Size = new Size(224, 26);
+            edgeDetectionToolStripMenuItem1.Text = "Edge Detection";
+            edgeDetectionToolStripMenuItem1.Click += edgeDetectionToolStripMenuItem_Click;
+            // 
+            // boxBlurToolStripMenuItem1
+            // 
+            boxBlurToolStripMenuItem1.Name = "boxBlurToolStripMenuItem1";
+            boxBlurToolStripMenuItem1.Size = new Size(224, 26);
+            boxBlurToolStripMenuItem1.Text = "Box Blur";
+            boxBlurToolStripMenuItem1.Click += boxBlurToolStripMenuItem_Click;
+            // 
+            // gaussianBlurToolStripMenuItem
+            // 
+            gaussianBlurToolStripMenuItem.Name = "gaussianBlurToolStripMenuItem";
+            gaussianBlurToolStripMenuItem.Size = new Size(224, 26);
+            gaussianBlurToolStripMenuItem.Text = "Gaussian Blur";
+            gaussianBlurToolStripMenuItem.Click += gaussianBlurToolStripMenuItem_Click;
+            // 
+            // embossToolStripMenuItem
+            // 
+            embossToolStripMenuItem.Name = "embossToolStripMenuItem";
+            embossToolStripMenuItem.Size = new Size(224, 26);
+            embossToolStripMenuItem.Text = "Emboss";
+            embossToolStripMenuItem.Click += embossToolStripMenuItem_Click;
+            // 
+            // edgeEnhancementToolStripMenuItem
+            // 
+            edgeEnhancementToolStripMenuItem.Name = "edgeEnhancementToolStripMenuItem";
+            edgeEnhancementToolStripMenuItem.Size = new Size(224, 26);
+            edgeEnhancementToolStripMenuItem.Text = "Edge Enhancement";
+            edgeEnhancementToolStripMenuItem.Click += edgeEnhancementToolStripMenuItem_Click;
+            // 
+            // meanBlurToolStripMenuItem
+            // 
+            meanBlurToolStripMenuItem.Name = "meanBlurToolStripMenuItem";
+            meanBlurToolStripMenuItem.Size = new Size(224, 26);
+            meanBlurToolStripMenuItem.Text = "Mean Blur";
+            meanBlurToolStripMenuItem.Click += meanBlurToolStripMenuItem_Click;
+            // 
+            // sobelVerticalToolStripMenuItem
+            // 
+            sobelVerticalToolStripMenuItem.Name = "sobelVerticalToolStripMenuItem";
+            sobelVerticalToolStripMenuItem.Size = new Size(224, 26);
+            sobelVerticalToolStripMenuItem.Text = "Sobel Vertical";
+            sobelVerticalToolStripMenuItem.Click += sobelVerticalToolStripMenuItem_Click;
+            // 
+            // laplacianToolStripMenuItem
+            // 
+            laplacianToolStripMenuItem.Name = "laplacianToolStripMenuItem";
+            laplacianToolStripMenuItem.Size = new Size(224, 26);
+            laplacianToolStripMenuItem.Text = "Laplacian";
+            laplacianToolStripMenuItem.Click += laplacianToolStripMenuItem_Click;
+            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(110, 82);
+            pictureBox1.Location = new Point(90, 93);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(216, 193);
+            pictureBox1.Size = new Size(266, 243);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -161,9 +248,9 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(443, 82);
+            pictureBox2.Location = new Point(432, 93);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(199, 193);
+            pictureBox2.Size = new Size(249, 243);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
@@ -195,15 +282,8 @@
             trackBar2.Name = "trackBar2";
             trackBar2.Size = new Size(216, 56);
             trackBar2.TabIndex = 4;
-            trackBar2.Value = 1;
+            trackBar2.Value = 50;
             trackBar2.Scroll += trackBar2_Scroll;
-            // 
-            // staticImageSubtractionToolStripMenuItem
-            // 
-            staticImageSubtractionToolStripMenuItem.Name = "staticImageSubtractionToolStripMenuItem";
-            staticImageSubtractionToolStripMenuItem.Size = new Size(255, 26);
-            staticImageSubtractionToolStripMenuItem.Text = "Static Image Subtraction";
-            staticImageSubtractionToolStripMenuItem.Click += staticImageSubtractionToolStripMenuItem_Click;
             // 
             // Form1
             // 
@@ -250,5 +330,15 @@
         private ToolStripMenuItem sepiaToolStripMenuItem;
         private ToolStripMenuItem webCamSubtractionToolStripMenuItem;
         private ToolStripMenuItem staticImageSubtractionToolStripMenuItem;
+        private ToolStripMenuItem advancedEnhancementToolStripMenuItem;
+        private ToolStripMenuItem sharpenToolStripMenuItem2;
+        private ToolStripMenuItem edgeDetectionToolStripMenuItem1;
+        private ToolStripMenuItem boxBlurToolStripMenuItem1;
+        private ToolStripMenuItem gaussianBlurToolStripMenuItem;
+        private ToolStripMenuItem embossToolStripMenuItem;
+        private ToolStripMenuItem edgeEnhancementToolStripMenuItem;
+        private ToolStripMenuItem meanBlurToolStripMenuItem;
+        private ToolStripMenuItem sobelVerticalToolStripMenuItem;
+        private ToolStripMenuItem laplacianToolStripMenuItem;
     }
 }

@@ -131,7 +131,8 @@ namespace ImageProcessingTraining
 
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
-            BasicDIP.Equalisation(ref loaded, ref processed, trackBar2.Value / 100);
+            int degree = trackBar2.Value; // Keep as int, 0–100
+            BasicDIP.Equalisation(ref loaded, ref processed, degree);
             pictureBox2.Image = processed;
         }
 
@@ -169,6 +170,79 @@ namespace ImageProcessingTraining
         {
             Form3 imageSubForm = new Form3();
             imageSubForm.Show();
+        }
+
+        //      Advanced Image Enhancement
+        private void sharpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.Sharpen();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void edgeDetectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.EdgeDetection();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void boxBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.BoxBlur();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void gaussianBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.GaussianBlur();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void embossToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.Emboss();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void edgeEnhancementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.EdgeEnhance();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void meanBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.MeanBlur();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void sobelVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.SobelVertical();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
+        }
+
+        private void laplacianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            processed = (Bitmap)loaded.Clone();
+            ConvMatrix m = ConvMatrix.Outline();
+            BasicDIP.Conv3x3(ref processed, m);
+            pictureBox2.Image = processed;
         }
     }
 }
